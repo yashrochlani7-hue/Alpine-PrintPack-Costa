@@ -13,12 +13,15 @@ workflows:
           issuer_id: $APP_STORE_CONNECT_ISSUER_ID
           team_id: $APPLE_TEAM_ID
 
+        distribution_type: app-store
+        bundle_identifier: com.alpine.printpack.costing # CHANGE THIS
+
     scripts:
       - name: Install dependencies
         script: |
           flutter pub get
 
-      - name: Build iOS IPA (Release)
+      - name: Build IPA
         script: |
           flutter build ipa --release
 
